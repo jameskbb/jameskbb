@@ -1,0 +1,68 @@
+name: Update profile
+
+# Weekly rather than daily on purpose. The sheets record the repo's own revision
+# and last-drawn date, so every run that finds new activity produces a commit --
+# weekly keeps that to ~52 a year instead of 365. There is deliberately no push
+# trigger: a commit changes the revision, which would redraw the banner, which
+# would commit again.
+on:
+  schedule:
+    - cron: '17 6 * * 1'   # Mondays, 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # the banner's "revision" field is a commit count
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.63.0
+          npx playwright install --with-deps chromium
+
+      - name: Fetch contribution calendar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fetch-contributions.mjs --login=jameskbb --out=contributions.json
+
+      - name: Render sheet 2 (commit activity)
+        run: node assets/src/render-activity.mjs --data=contributions.json
+
+      - name: Render sheet 1 (banner)
+        run: node assets/src/render-banner.mjs
+
+      - name: Update generated README regions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/update-readme.mjs
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # only the generated outputs -- never contributions.json or node_modules
+          git add README.md assets/banner-light.png assets/banner-dark.png \
+                  assets/activity-light.png assets/activity-dark.png
+
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+
+          git commit -m "Redraw the sheets and refresh the generated sections"
+          git push

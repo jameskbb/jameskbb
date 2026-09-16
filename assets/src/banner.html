@@ -1,11 +1,16 @@
 <!doctype html>
 <!--
   Source for assets/banner-light.png and assets/banner-dark.png.
-  Render with: node assets/src/render-banner.mjs   (see that file for deps)
+  Render with: node assets/src/render-banner.mjs   (see that file for flags)
 
   Palette and fonts are lifted from jameskrape.com's design tokens so the
   profile banner and the site stay in sync. If the site's tokens change,
   update :root / [data-theme="dark"] below and re-render.
+
+  The sheet is a drawing, so everything on it should read as drafting: the
+  dimension callout, the graph paper, the title block. A photograph is the one
+  thing that cannot, which is why the portrait is off by default. Render with
+  --portrait to bring it back.
 -->
 <html lang="en">
 <head>
@@ -58,8 +63,8 @@
   }
 
   /* double rule, the drawing-sheet frame */
-  .frame      { position: absolute; inset: 14px; border: 2px solid var(--rule); }
-  .frame-in   { position: absolute; inset: 20px; border: 1px solid var(--rule); opacity: .55; }
+  .frame    { position: absolute; inset: 14px; border: 2px solid var(--rule); }
+  .frame-in { position: absolute; inset: 20px; border: 1px solid var(--rule); opacity: .55; }
 
   .stage { position: absolute; inset: 0; padding: 44px 58px; display: flex; }
 
@@ -67,7 +72,7 @@
   .left { flex: 1 1 auto; display: flex; flex-direction: column; min-width: 0; }
 
   .dim { position: relative; height: 22px; margin-left: 4px; }
-  .dim .bar { position: absolute; top: 11px; left: 0; right: 0; height: 1px; background: var(--accent-line); }
+  .dim .bar  { position: absolute; top: 11px; left: 0; right: 0; height: 1px; background: var(--accent-line); }
   .dim .tick { position: absolute; top: 0; width: 1px; height: 22px; background: var(--accent-line); }
   .dim .tick.l { left: 0; } .dim .tick.r { right: 0; }
   .dim .arrow {
@@ -92,27 +97,27 @@
     font-size: 25px; font-weight: 400; color: var(--muted);
     margin-top: auto; padding-bottom: 2px; letter-spacing: -.005em;
   }
-  .tagline b { font-weight: 700; color: var(--ink); }
   body[data-tagline="none"] .tagline { display: none; }
 
-  /* ---------- right: title block + portrait ---------- */
-  .right { flex: 0 0 auto; display: flex; align-items: flex-end; gap: 34px; padding-left: 40px; }
+  /* ---------- right: title block (+ optional portrait) ---------- */
+  .right { flex: 0 0 auto; display: flex; align-items: flex-end; gap: 34px; padding-left: 44px; }
 
-  table.titleblock { border-collapse: collapse; font-size: 15px; margin-bottom: 2px; }
+  table.titleblock { border-collapse: collapse; font-size: 15px; margin-bottom: 2px; width: 430px; }
   table.titleblock td { border: 1px solid var(--rule); padding: 7px 14px; white-space: nowrap; }
   table.titleblock td.k {
     font-family: 'Overpass Mono', monospace; font-size: 12.5px; font-weight: 400;
-    letter-spacing: .12em; color: var(--muted);
+    letter-spacing: .12em; color: var(--muted); width: 108px;
   }
   table.titleblock td.v { font-weight: 600; }
+  /* the live fields read as pencilled-in values, so they get the accent rule */
+  table.titleblock tr.live td.v { font-family: 'Overpass Mono', monospace; font-size: 13.5px; }
 
-  /* Portrait: bordered card with the site's offset accent block behind it.
-     The source cutout has ~2px of headroom -- the hair is flush with the top
-     of the file -- so boxing it inside the card always shears the head off.
-     Instead the head breaks ABOVE the card, the way it does on
-     jameskrape.com: .clip extends past the card's top edge and only crops
-     the shoulders at the sides and the chest at the bottom. */
+  /* Portrait, off by default -- see the comment at the top of this file.
+     The source cutout has ~2px of headroom, so the head must break ABOVE the
+     card or the top border shears it off. .clip extends past the card's top
+     edge and crops only the shoulders at the sides and the chest at the bottom. */
   .portrait { position: relative; width: 182px; height: 200px; }  /* 190 card + 10 offset */
+  body[data-portrait="off"] .portrait { display: none; }
   .portrait .shadow {
     position: absolute; left: 10px; top: 10px; width: 182px; height: 190px;
     background: var(--accent); opacity: .85;
@@ -132,7 +137,7 @@
   }
 </style>
 </head>
-<body data-theme="light" data-tagline="site">
+<body data-theme="light" data-tagline="site" data-portrait="off">
   <div class="frame"></div>
   <div class="frame-in"></div>
 
@@ -152,8 +157,11 @@
       <table class="titleblock">
         <tr><td class="k">contents</td><td class="v">simulations, tools, AI experiments</td></tr>
         <tr><td class="k">status</td><td class="v">always in progress</td></tr>
+        <tr class="live"><td class="k">revision</td><td class="v" id="revision">&mdash;</td></tr>
+        <tr class="live"><td class="k">drawn</td><td class="v" id="drawn">&mdash;</td></tr>
         <tr><td class="k">sheet</td><td class="v">1 of &infin;</td></tr>
       </table>
+
       <div class="portrait">
         <div class="shadow"></div>
         <div class="card"></div>
