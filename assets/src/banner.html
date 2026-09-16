@@ -1,0 +1,173 @@
+<!doctype html>
+<!--
+  Source for assets/banner-light.png and assets/banner-dark.png.
+  Render with: node assets/src/render-banner.mjs   (see that file for deps)
+
+  Palette and fonts are lifted from jameskrape.com's design tokens so the
+  profile banner and the site stay in sync. If the site's tokens change,
+  update :root / [data-theme="dark"] below and re-render.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@400..900&family=Overpass+Mono:wght@400..600&display=swap">
+<style>
+  /* Tokens copied from jameskrape.com (:root and .dark) */
+  :root {
+    --bg:          hsl(97 29% 91%);
+    --ink:         hsl(222 54% 19%);
+    --muted:       hsl(144 10% 29%);
+    --rule:        hsl(104 18% 56%);
+    --grid-minor:  hsl(104 28% 50% / .16);
+    --grid-major:  hsl(104 30% 36% / .30);
+    --accent:      hsl(54 88% 67%);
+    --accent-line: hsl(47 55% 45%);
+    --card:        hsl(93 36% 95%);
+  }
+  [data-theme="dark"] {
+    --bg:          hsl(210 68% 18%);
+    --ink:         hsl(206 50% 95%);
+    --muted:       hsl(208 42% 80%);
+    --rule:        hsl(207 40% 44%);
+    --grid-minor:  hsl(206 60% 90% / .055);
+    --grid-major:  hsl(206 60% 90% / .14);
+    --accent:      hsl(54 88% 67%);
+    --accent-line: hsl(47 48% 54%);
+    --card:        hsl(209 66% 22%);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { width: 1280px; height: 320px; }
+
+  body {
+    font-family: 'Overpass', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+    /* graph paper: 16px minor cell, 80px major */
+    background-image:
+      linear-gradient(var(--grid-major) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+      linear-gradient(var(--grid-minor) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-minor) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+  }
+
+  /* double rule, the drawing-sheet frame */
+  .frame      { position: absolute; inset: 14px; border: 2px solid var(--rule); }
+  .frame-in   { position: absolute; inset: 20px; border: 1px solid var(--rule); opacity: .55; }
+
+  .stage { position: absolute; inset: 0; padding: 44px 58px; display: flex; }
+
+  /* ---------- left: dimension + wordmark + tagline ---------- */
+  .left { flex: 1 1 auto; display: flex; flex-direction: column; min-width: 0; }
+
+  .dim { position: relative; height: 22px; margin-left: 4px; }
+  .dim .bar { position: absolute; top: 11px; left: 0; right: 0; height: 1px; background: var(--accent-line); }
+  .dim .tick { position: absolute; top: 0; width: 1px; height: 22px; background: var(--accent-line); }
+  .dim .tick.l { left: 0; } .dim .tick.r { right: 0; }
+  .dim .arrow {
+    position: absolute; top: 7px; width: 0; height: 0;
+    border-top: 4.5px solid transparent; border-bottom: 4.5px solid transparent;
+  }
+  .dim .arrow.l { left: 1px;  border-right: 9px solid var(--accent-line); }
+  .dim .arrow.r { right: 1px; border-left:  9px solid var(--accent-line); }
+  .dim .label {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    background: var(--bg); padding: 0 14px;
+    font-family: 'Overpass Mono', monospace; font-size: 13px; font-weight: 500;
+    letter-spacing: .14em; color: var(--accent-line); line-height: 22px;
+  }
+
+  .wordmark {
+    font-size: 96px; font-weight: 800; letter-spacing: -.028em;
+    line-height: .96; margin-top: 10px; white-space: nowrap;
+  }
+
+  .tagline {
+    font-size: 25px; font-weight: 400; color: var(--muted);
+    margin-top: auto; padding-bottom: 2px; letter-spacing: -.005em;
+  }
+  .tagline b { font-weight: 700; color: var(--ink); }
+  body[data-tagline="none"] .tagline { display: none; }
+
+  /* ---------- right: title block + portrait ---------- */
+  .right { flex: 0 0 auto; display: flex; align-items: flex-end; gap: 34px; padding-left: 40px; }
+
+  table.titleblock { border-collapse: collapse; font-size: 15px; margin-bottom: 2px; }
+  table.titleblock td { border: 1px solid var(--rule); padding: 7px 14px; white-space: nowrap; }
+  table.titleblock td.k {
+    font-family: 'Overpass Mono', monospace; font-size: 12.5px; font-weight: 400;
+    letter-spacing: .12em; color: var(--muted);
+  }
+  table.titleblock td.v { font-weight: 600; }
+
+  /* Portrait: bordered card with the site's offset accent block behind it.
+     The source cutout has ~2px of headroom -- the hair is flush with the top
+     of the file -- so boxing it inside the card always shears the head off.
+     Instead the head breaks ABOVE the card, the way it does on
+     jameskrape.com: .clip extends past the card's top edge and only crops
+     the shoulders at the sides and the chest at the bottom. */
+  .portrait { position: relative; width: 182px; height: 200px; }  /* 190 card + 10 offset */
+  .portrait .shadow {
+    position: absolute; left: 10px; top: 10px; width: 182px; height: 190px;
+    background: var(--accent); opacity: .85;
+  }
+  .portrait .card {
+    position: absolute; left: 0; top: 0; width: 182px; height: 190px;
+    background: var(--card); border: 2px solid var(--rule);
+  }
+  .portrait .clip {
+    position: absolute; left: 2px; width: 178px;   /* card's inner width */
+    top: -22px; height: 210px;                     /* -22 .. 188 = card inner bottom */
+    overflow: hidden;
+  }
+  .portrait img {
+    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    height: 206px; width: auto; display: block;    /* 4px cushion above the hair */
+  }
+</style>
+</head>
+<body data-theme="light" data-tagline="site">
+  <div class="frame"></div>
+  <div class="frame-in"></div>
+
+  <div class="stage">
+    <div class="left">
+      <div class="dim" id="dim">
+        <span class="bar"></span>
+        <span class="tick l"></span><span class="tick r"></span>
+        <span class="arrow l"></span><span class="arrow r"></span>
+        <span class="label">not to scale</span>
+      </div>
+      <div class="wordmark">James Krape</div>
+      <div class="tagline" id="tagline">Builder. Leader. Writer.</div>
+    </div>
+
+    <div class="right">
+      <table class="titleblock">
+        <tr><td class="k">contents</td><td class="v">simulations, tools, AI experiments</td></tr>
+        <tr><td class="k">status</td><td class="v">always in progress</td></tr>
+        <tr><td class="k">sheet</td><td class="v">1 of &infin;</td></tr>
+      </table>
+      <div class="portrait">
+        <div class="shadow"></div>
+        <div class="card"></div>
+        <div class="clip"><img id="portrait" src="" alt="James Krape"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // The dimension line measures the wordmark, the way a real callout would.
+    window.__fit = () => {
+      const w = document.querySelector('.wordmark');
+      document.getElementById('dim').style.width = Math.round(w.getBoundingClientRect().width) + 'px';
+    };
+  </script>
+</body>
+</html>
