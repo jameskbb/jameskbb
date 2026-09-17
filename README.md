@@ -12,9 +12,9 @@
   promoting something is just a matter of writing a block for it. To keep a repo
   off the page entirely, add its name to .github/readme-ignore.txt.
 
-  Both sheets are generated too: assets/src/banner.html is sheet 1 and
-  assets/src/activity.html is sheet 2, rendered through headless Chromium with a
-  palette copied from jameskrape.com. See assets/src/render-*.mjs.
+  The banner is generated too: assets/src/banner.html is the layout, rendered
+  through headless Chromium with a palette copied from jameskrape.com. See
+  assets/src/render-banner.mjs.
 -->
 
 <picture>
@@ -108,10 +108,3 @@ I write at **[jameskrape.com](https://jameskrape.com)** — notes on systems, an
 
 <sub>This section fills itself in once the site publishes a feed.</sub>
 <!-- END:writing -->
-
-## Activity
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.png">
-  <img src="assets/activity-light.png" width="100%" alt="Commit activity: a year of GitHub contributions plotted on graph paper, with the busiest day marked in gold">
-</picture>
