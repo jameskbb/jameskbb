@@ -54,7 +54,7 @@ Fly Golf takes the reconstructed wiring of a real fruit fly's brain (166,700 neu
 
 Someone at lunch says "let's rank every pizza place in town." Paste a list, drag it into tiers, share a link — fast enough to finish before the conversation moves on. Voting, presentation mode and PNG export stay a keystroke away. No login, no backend.
 
-**[Live demo](https://jameskbb.github.io/tierboard/)**&emsp;<sub>`TypeScript` `no backend`</sub>
+**[Live demo](https://jameskbb.github.io/tierboard/)**&emsp;[Source](https://github.com/jameskbb/tierboard)&emsp;<sub>`TypeScript` `no backend`</sub>
 
 </td>
 <td width="50%" valign="top">
@@ -65,7 +65,7 @@ Someone at lunch says "let's rank every pizza place in town." Paste a list, drag
 
 Tell it the plywood and boards you have and the parts you need. It lays out cuts a table saw can actually make, edge to edge with the blade kerf taken out, numbers them in the order you'll make them, and points out the offcuts worth keeping. It runs offline in a phone browser.
 
-**[Live demo](https://jameskbb.github.io/lumber-cut-planner/)**&emsp;<sub>`woodworking` `cut optimization` `offline web app`</sub>
+**[Live demo](https://jameskbb.github.io/lumber-cut-planner/)**&emsp;[Source](https://github.com/jameskbb/lumber-cut-planner)&emsp;<sub>`woodworking` `cut optimization` `offline web app`</sub>
 
 </td>
 </tr>
@@ -78,7 +78,7 @@ Tell it the plywood and boards you have and the parts you need. It lays out cuts
 
 A USB light that knows what my day is doing. It glows red while I'm in a meeting, flashes gold two minutes before standup, breathes blue when an AI coding agent finishes, and thumps orange when a CI run fails.
 
-<sub>`Python` `hardware` `AI agents`</sub>
+**[Source](https://github.com/jameskbb/blink-light)**&emsp;<sub>`Python` `hardware` `AI agents`</sub>
 
 </td>
 <td width="50%" valign="top">
@@ -89,7 +89,7 @@ A USB light that knows what my day is doing. It glows red while I'm in a meeting
 
 A retired office desktop running Proxmox with three jobs: everyday apps, game servers for friends, and a sandbox for experiments. Written as a guide for someone who has never run a server, backups and restores included.
 
-<sub>`Proxmox` `self-hosting` `guide`</sub>
+**[Source](https://github.com/jameskbb/homelab-public)**&emsp;<sub>`Proxmox` `self-hosting` `guide`</sub>
 
 </td>
 </tr>
