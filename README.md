@@ -32,7 +32,7 @@ The writing lives at **[jameskrape.com](https://jameskrape.com)**, including the
 
 <a href="https://github.com/jameskbb/airline-ops"><img src="assets/airline-ops.jpg" width="100%" alt="FlightOps Intelligence: an executive overview of U.S. network on-time performance, with KPI tiles, a network health trend and a generated operations brief"></a>
 
-Public airline-performance data is rich and almost unusable: roughly 650,000 rows and 120 columns a month, with every interesting question sitting several transformations away from the source. FlightOps turns 36 months of DOT on-time reporting — 22.9 million flights — into something you can actually interrogate, from network health down to a single route, carrier or delay cause. Each metric is defined once and compared like with like, so a genuinely bad month and a changed traffic mix stop looking the same. The processed data ships with the repo, so it runs the moment you clone it.
+Public airline-performance data is rich and almost unusable: roughly 650,000 rows and 120 columns a month, with every interesting question sitting several transformations away from the source. FlightOps turns 36 months of DOT on-time reporting (22.9 million flights) into something you can actually interrogate, from network health down to a single route, carrier or delay cause. Each metric is defined once and compared like with like, so a genuinely bad month and a changed traffic mix stop looking the same. The processed data ships with the repo, so it runs the moment you clone it.
 
 **[Source](https://github.com/jameskbb/airline-ops)**&emsp;<sub>`Streamlit` `DuckDB` `Parquet` `analytics` `Python`</sub>
 
@@ -52,7 +52,7 @@ Fly Golf takes the reconstructed wiring of a real fruit fly's brain (166,700 neu
 
 ### [Tierboard](https://github.com/jameskbb/tierboard)
 
-Someone at lunch says "let's rank every pizza place in town." Paste a list, drag it into tiers, share a link — fast enough to finish before the conversation moves on. Voting, presentation mode and PNG export stay a keystroke away. No login, no backend.
+Someone at lunch says "let's rank every pizza place in town." Paste a list, drag it into tiers, share a link: fast enough to finish before the conversation moves on. Voting, presentation mode and PNG export stay a keystroke away. No login, no backend.
 
 **[Live demo](https://jameskbb.github.io/tierboard/)**&emsp;[Source](https://github.com/jameskbb/tierboard)&emsp;<sub>`TypeScript` `no backend`</sub>
 
@@ -104,7 +104,7 @@ _Everything public is featured above. Anything new lands here on its own._
 ## Writing
 
 <!-- BEGIN:writing -->
-I write at **[jameskrape.com](https://jameskrape.com)** — notes on systems, analytics and whatever I'm building.
+I write at **[jameskrape.com](https://jameskrape.com)**: notes on systems, analytics and whatever I'm building.
 
 <sub>This section fills itself in once the site publishes a feed.</sub>
 <!-- END:writing -->

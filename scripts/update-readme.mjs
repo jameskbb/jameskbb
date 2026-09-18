@@ -75,14 +75,14 @@ const buildRepos = async (readme) => {
       const bits = [`**[${r.name}](${r.html_url})**`];
       if (r.description) bits.push(r.description.replace(/\s+/g, ' ').trim());
       const tail = [r.language, `updated ${r.pushed_at.slice(0, 10)}`].filter(Boolean).join(' · ');
-      return `- ${bits.join(' — ')}<br><sub>${tail}</sub>`;
+      return `- ${bits.join(': ')}<br><sub>${tail}</sub>`;
     })
     .join('\n');
 };
 
 // ---- writing -------------------------------------------------------------
 const PLACEHOLDER =
-  `I write at **[jameskrape.com](${SITE})** — notes on systems, analytics and whatever I'm building.\n\n` +
+  `I write at **[jameskrape.com](${SITE})**: notes on systems, analytics and whatever I'm building.\n\n` +
   `<sub>This section fills itself in once the site publishes a feed.</sub>`;
 
 const buildWriting = async () => {
