@@ -38,7 +38,7 @@ Public airline-performance data is rich and almost unusable: roughly 650,000 row
 
 ### [Fly Golf](https://github.com/jameskbb/fly-golf)
 
-<a href="https://jameskbb.github.io/fly-golf/"><img src="assets/fly-golf.gif" width="100%" alt="Fly Golf gameplay: the simulated fly picks a club, swings, and sends the ball over a pond while its neural telemetry updates beside the course"></a>
+<a href="https://jameskbb.github.io/fly-golf/"><img src="assets/fly-golf.gif" width="100%" alt="Fly Golf gameplay: the simulated fly picks a club, swings, and sends the ball over a pond onto the green"></a>
 
 Fly Golf takes the reconstructed wiring of a real fruit fly's brain (166,700 neurons, 25.6 million connections), simulates it spike by spike, and puts it on a 3D golf course. The fly picks a club from a full bag, lines up the shot and swings, with each decision read out of its neural activity. It hasn't broken 100 yet.
 
