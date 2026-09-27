@@ -8,6 +8,9 @@
 //   <!-- BEGIN:repos -->   every public repo that isn't featured above or ignored
 //   <!-- BEGIN:writing --> latest posts from jameskrape.com, once it has a feed
 //
+// Each region writes its own heading and comes back empty when it has nothing
+// to show, so the page never ends on a placeholder section.
+//
 // A repo is "featured" if it is linked anywhere above the repos marker, so
 // adding a hand-written block is all it takes to promote something out of the
 // generated list. Names in .github/readme-ignore.txt are dropped entirely.
@@ -41,7 +44,8 @@ const replaceRegion = (text, name, body) => {
   const i = text.indexOf(begin);
   const j = text.indexOf(end);
   if (i === -1 || j === -1 || j < i) throw new Error(`README is missing the ${name} markers`);
-  return text.slice(0, i + begin.length) + '\n' + body.trim() + '\n' + text.slice(j);
+  const inner = body.trim();
+  return text.slice(0, i + begin.length) + '\n' + (inner ? inner + '\n' : '') + text.slice(j);
 };
 
 const gh = async (url) => {
@@ -68,9 +72,9 @@ const buildRepos = async (readme) => {
     .filter((r) => !ignore.has(r.name.toLowerCase()))
     .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
 
-  if (!rows.length) return '_Everything public is featured above. Anything new lands here on its own._';
+  if (!rows.length) return '';
 
-  return rows
+  const list = rows
     .map((r) => {
       const bits = [`**[${r.name}](${r.html_url})**`];
       if (r.description) bits.push(r.description.replace(/\s+/g, ' ').trim());
@@ -78,13 +82,10 @@ const buildRepos = async (readme) => {
       return `- ${bits.join(': ')}<br><sub>${tail}</sub>`;
     })
     .join('\n');
+  return `## Elsewhere on GitHub\n\n${list}`;
 };
 
 // ---- writing -------------------------------------------------------------
-const PLACEHOLDER =
-  `I write at **[jameskrape.com](${SITE})**: notes on systems, analytics and whatever I'm building.\n\n` +
-  `<sub>This section fills itself in once the site publishes a feed.</sub>`;
-
 const buildWriting = async () => {
   for (const p of FEEDS) {
     try {
@@ -112,6 +113,7 @@ const buildWriting = async () => {
 
       if (!items.length) continue;
       return (
+        '## Writing\n\n' +
         items.map((i) => `- **[${i.title}](${i.link})**${i.stamp ? `<br><sub>${i.stamp}</sub>` : ''}`).join('\n') +
         `\n\n<sub>More at **[jameskrape.com](${SITE})**.</sub>`
       );
@@ -119,7 +121,7 @@ const buildWriting = async () => {
       // try the next candidate
     }
   }
-  return PLACEHOLDER;
+  return '';
 };
 
 // ---- main ----------------------------------------------------------------
