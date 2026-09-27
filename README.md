@@ -28,6 +28,14 @@ The writing lives at **[jameskrape.com](https://jameskrape.com)**, including the
 
 ## Projects
 
+### [AnalystOS](https://github.com/jameskbb/analystos)
+
+<a href="https://github.com/jameskbb/analystos"><img src="assets/analystos.jpg" width="100%" alt="AnalystOS: an investigation tree for the question 'Why was August revenue down?', with revenue down 11.8% at the root and the Orders, AOV and Dallas branch findings that explain it, each tagged with its evidence strength and a link to its SQL"></a>
+
+A dashboard shows what happened. Working out why is still an analyst's afternoon: pick the right metric definition, find a fair baseline, write the queries, check that the parts add up. AnalystOS makes that method executable. Ask "why was August revenue down?" and it proposes a plan you can edit, runs it as real SQL, and returns a tree of findings where every number links back to the query that produced it. In the bundled demo, an 11.8% revenue drop traces to one branch and then to one customer. The arithmetic never passes through a language model, and the whole thing runs locally with no API key.
+
+**[Source](https://github.com/jameskbb/analystos)**&emsp;<sub>`analytics` `semantic layer` `SQL` `Python` `TypeScript`</sub>
+
 ### [FlightOps Intelligence](https://github.com/jameskbb/airline-ops)
 
 <a href="https://github.com/jameskbb/airline-ops"><img src="assets/airline-ops.jpg" width="100%" alt="FlightOps Intelligence: an executive overview of U.S. network on-time performance, with KPI tiles, a network health trend and a generated operations brief"></a>
