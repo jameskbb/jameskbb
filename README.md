@@ -38,11 +38,11 @@ The writing lives at **[jameskrape.com](https://jameskrape.com)**, including the
 
 ### [AnalystOS](https://github.com/jameskbb/analystos)
 
-<a href="https://github.com/jameskbb/analystos"><img src="assets/analystos.jpg" width="100%" alt="AnalystOS: an investigation tree for the question 'Why was August revenue down?', with revenue down 11.8% at the root and the Orders, AOV and Dallas branch findings that explain it, each tagged with its evidence strength and a link to its SQL"></a>
+<a href="https://github.com/jameskbb/analystos"><img src="assets/analystos.jpg" width="100%" alt="AnalystOS: the CEO question 'We made our sales number last quarter, but we missed our target for net profit. What happened?' answered with a plan-to-actual waterfall for Q2 2026, from a $3.79M operating profit plan to $1.93M actual, each bar labelled with its measured cause and reconciled to a $0.00 residual"></a>
 
 **Ask why a number moved; get an answer where every figure links back to its SQL.**
 
-A dashboard shows what happened. Working out why is still an analyst's afternoon: pick the right metric definition, find a fair baseline, write the queries, check that the parts add up. AnalystOS makes that method executable. Ask "why was August revenue down?" and it proposes a plan you can edit, runs it as real SQL, and returns a tree of findings. In the bundled demo, an 11.8% revenue drop traces to one branch and then to one customer. The arithmetic never passes through a language model, and the whole thing runs locally with no API key.
+A dashboard shows what happened. Working out why is still an analyst's afternoon: pick the right metric definition, find a fair baseline, write the queries, check that the parts add up. AnalystOS makes that method executable. Ask "we made our sales number last quarter, but we missed our target for net profit; what happened?" and it proposes a plan you can edit, runs it as real SQL, and returns a tree of findings. In the bundled demo, revenue lands on plan while operating profit misses by $1.86M (49%), and every dollar of the gap traces to a measured cause: supplier cost inflation, contractor discounting, freight and overtime, reconciled to a $0.00 residual. The arithmetic never passes through a language model, and the whole thing runs locally with no API key.
 
 **[Source](https://github.com/jameskbb/analystos)**&emsp;<sub>`analytics` `semantic layer` `SQL` `Python` `TypeScript`</sub>
 
