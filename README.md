@@ -125,6 +125,9 @@ Tell it the plywood and boards you have and the parts you need. It lays out cuts
 </table>
 
 <!-- BEGIN:repos -->
+## Elsewhere on GitHub
+
+- **[email-signature](https://github.com/jameskbb/email-signature)**: Create email signatures with hosted images, contact links, live preview, and HTML export. No build step.<br><sub>JavaScript · updated 2026-10-23</sub>
 <!-- END:repos -->
 
 <!-- BEGIN:writing -->
