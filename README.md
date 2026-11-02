@@ -6,7 +6,7 @@
   substantial projects get a full-width block that opens with a one-line
   hook in bold; smaller ones sit in a two-column grid, so keep each table at
   an even number of cells. Images live in assets/ (JPEG, ~1200px wide, and
-  1200x440 in the grid so rows line up). Add the project to the "Jump to" row
+  the same height across a grid row so it lines up). Add the project to the "Jump to" row
   under the intro as well. Jump links must use #user-content-<anchor>, because
   a plain #anchor does not scroll on the profile page. The anchor is the
   heading text, lowercased, with spaces turned into hyphens.
@@ -34,7 +34,7 @@ Data and analytics by day. The rest of the time I build data tools, AI experimen
 
 The résumé lives on **[LinkedIn](https://www.linkedin.com/in/jameskrape)**.
 
-**Jump to:** [AnalystOS](#user-content-analystos) · [FlightOps Intelligence](#user-content-flightops-intelligence) · [Workshop Injury Intelligence](#user-content-workshop-injury-intelligence) · [Fly Golf](#user-content-fly-golf) · [Blink Light](#user-content-blink-light) · [My homelab](#user-content-my-homelab) · [Tierboard](#user-content-tierboard) · [Lumber Cut Planner](#user-content-lumber-cut-planner) · [Hearth](#user-content-hearth) · [Email Signature](#user-content-email-signature)
+**Jump to:** [AnalystOS](#user-content-analystos) · [FlightOps Intelligence](#user-content-flightops-intelligence) · [Workshop Injury Intelligence](#user-content-workshop-injury-intelligence) · [Fly Golf](#user-content-fly-golf) · [Blink Light](#user-content-blink-light) · [My homelab](#user-content-my-homelab) · [Tierboard](#user-content-tierboard) · [Lumber Cut Planner](#user-content-lumber-cut-planner) · [Hearth](#user-content-hearth) · [Casebook](#user-content-casebook)
 
 ## Data and analytics
 
@@ -144,7 +144,7 @@ Tell it the plywood and boards you have and the parts you need. It lays out cuts
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/jameskbb/hearth"><img src="assets/hearth.jpg" width="100%" alt="Hearth on a TV: an aurora scene above a row of app tiles labelled Demo"></a>
+<a href="https://github.com/jameskbb/hearth"><img src="assets/hearth.jpg" width="100%" alt="Hearth on a TV: a clock over an aurora scene, above a row of app tiles labelled Demo"></a>
 
 ### [Hearth](https://github.com/jameskbb/hearth)
 
@@ -155,13 +155,13 @@ A quiet, colorful home screen for Fire TV and Android TV, with animated scenes a
 </td>
 <td width="50%" valign="top">
 
-<a href="https://jameskbb.github.io/email-signature/"><img src="assets/email-signature.jpg" width="100%" alt="Email Signature title card: the line 'Your image, your details. A clean sign-off, ready to copy.' beside a sample signature for a fictional product designer"></a>
+<a href="https://github.com/jameskbb/casebook"><img src="assets/casebook.jpg" width="100%" alt="Casebook title card: the line 'Evidence your agents can't forget. Claims only you can verify.' beside a fictional case about a Northeast margin decline"></a>
 
-### [Email Signature](https://github.com/jameskbb/email-signature)
+### [Casebook](https://github.com/jameskbb/casebook)
 
-Build an email signature with hosted images, contact links and a live preview, then export the HTML. No build step.
+Evidence your agents can't forget, claims only you can verify. AI findings become a case you can explain and fact-check later, across sessions and AI clients, with everything kept on your own computer.
 
-**[Live demo](https://jameskbb.github.io/email-signature/)**&emsp;[Source](https://github.com/jameskbb/email-signature)&emsp;<sub>`JavaScript` `no build step`</sub>
+**[Download](https://github.com/jameskbb/casebook/releases)**&emsp;[Source](https://github.com/jameskbb/casebook)&emsp;<sub>`Go` `MCP` `AI agents` `desktop app`</sub>
 
 </td>
 </tr>
