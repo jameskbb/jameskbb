@@ -170,7 +170,7 @@ Evidence your agents can't forget, claims only you can verify. AI findings becom
 <!-- BEGIN:repos -->
 ## Elsewhere on GitHub
 
-- **[email-signature](https://github.com/jameskbb/email-signature)**: Create email signatures with hosted images, contact links, live preview, and HTML export. No build step.<br><sub>JavaScript · updated 2026-10-23</sub>
+- **[email-signature](https://github.com/jameskbb/email-signature)**: Create email signatures with hosted images, contact links, live preview, and HTML export. No build step.<br><sub>JavaScript · updated 2026-11-02</sub>
 <!-- END:repos -->
 
 <!-- BEGIN:writing -->
