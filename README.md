@@ -170,6 +170,7 @@ Evidence your agents can't forget, claims only you can verify. AI findings becom
 <!-- BEGIN:repos -->
 ## Elsewhere on GitHub
 
+- **[agent-tape](https://github.com/jameskbb/agent-tape)**: Trust but verify AI coding agents: findings cite evidence, and AgentTape checks each citation against its own recording of the run. Local-first.<br><sub>Python · updated 2026-11-02</sub>
 - **[email-signature](https://github.com/jameskbb/email-signature)**: Create email signatures with hosted images, contact links, live preview, and HTML export. No build step.<br><sub>JavaScript · updated 2026-11-02</sub>
 <!-- END:repos -->
 
