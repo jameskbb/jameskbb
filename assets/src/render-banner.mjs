@@ -25,7 +25,7 @@ const arg = (k, d) =>
   (process.argv.find((a) => a.startsWith(`--${k}=`)) || `=${d}`).split('=').slice(1).join('=');
 
 const TAGLINES = {
-  site:   'Analyst. Builder.',
+  site:   'Builder. Leader. Writer.',
   builds: 'Builds things to find out whether they work.',
   none:   '',
 };

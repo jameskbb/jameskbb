@@ -27,14 +27,14 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
-  <img src="assets/banner-light.png" width="100%" alt="James Krape. Analyst. Builder.">
+  <img src="assets/banner-light.png" width="100%" alt="James Krape. Builder. Leader. Writer.">
 </picture>
 
 Data and analytics by day. The rest of the time I build data tools, AI experiments, things for the woodshop, and the occasional simulation that exists only because I wanted to know the answer.
 
 The résumé lives on **[LinkedIn](https://www.linkedin.com/in/jameskrape)**.
 
-**Jump to:** [AnalystOS](#user-content-analystos) · [FlightOps Intelligence](#user-content-flightops-intelligence) · [Workshop Injury Intelligence](#user-content-workshop-injury-intelligence) · [Fly Golf](#user-content-fly-golf) · [Blink Light](#user-content-blink-light) · [My homelab](#user-content-my-homelab) · [Hearth](#user-content-hearth) · [Zambodi Search](#user-content-zambodi-search) · [Tierboard](#user-content-tierboard) · [Lumber Cut Planner](#user-content-lumber-cut-planner)
+**Jump to:** [AnalystOS](#user-content-analystos) · [FlightOps Intelligence](#user-content-flightops-intelligence) · [Workshop Injury Intelligence](#user-content-workshop-injury-intelligence) · [Fly Golf](#user-content-fly-golf) · [Blink Light](#user-content-blink-light) · [My homelab](#user-content-my-homelab) · [Tierboard](#user-content-tierboard) · [Lumber Cut Planner](#user-content-lumber-cut-planner) · [Hearth](#user-content-hearth) · [Email Signature](#user-content-email-signature)
 
 ## Data and analytics
 
@@ -112,30 +112,6 @@ A retired desktop running Proxmox: everyday apps, game servers for friends, and 
 
 </td>
 </tr>
-<tr>
-<td width="50%" valign="top">
-
-<a href="https://github.com/jameskbb/hearth"><img src="assets/hearth.jpg" width="100%" alt="Hearth on a TV: an aurora scene above a row of app tiles labelled Demo"></a>
-
-### [Hearth](https://github.com/jameskbb/hearth)
-
-A quiet, colorful home screen for Fire TV and Android TV, with animated scenes and remote-first navigation. Your apps in your order, and no ads, recommendations, accounts or analytics.
-
-**[Source](https://github.com/jameskbb/hearth)**&emsp;<sub>`Kotlin` `Android TV` `Fire TV`</sub>
-
-</td>
-<td width="50%" valign="top">
-
-<a href="https://github.com/jameskbb/zambodi-search"><img src="assets/zambodi-search.jpg" width="100%" alt="Zambodi Search title card: a bevelled multicoloured Zambodi wordmark beside a 2000s-style browser window showing a Zambodi homepage"></a>
-
-### [Zambodi Search](https://github.com/jameskbb/zambodi-search)
-
-The search engine that exists in exactly one browser. A parody Chrome extension: every visible "Google" becomes "Zambodi", and each new tab opens on a homepage from about 2004. Google still does the searching. Zambodi just takes the credit.
-
-**[Source](https://github.com/jameskbb/zambodi-search)**&emsp;<sub>`Chrome extension` `parody` `JavaScript`</sub>
-
-</td>
-</tr>
 </table>
 
 ## Everyday tools
@@ -162,6 +138,30 @@ Someone at lunch says "let's rank every pizza place in town." Paste a list, drag
 Tell it the plywood and boards you have and the parts you need. It lays out cuts a table saw can actually make, edge to edge with the blade kerf taken out, numbers them in the order you'll make them, and points out the offcuts worth keeping. It keeps working offline once loaded.
 
 **[Live demo](https://jameskbb.github.io/lumber-cut-planner/)**&emsp;[Source](https://github.com/jameskbb/lumber-cut-planner)&emsp;<sub>`woodworking` `cut optimization` `offline web app`</sub>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/jameskbb/hearth"><img src="assets/hearth.jpg" width="100%" alt="Hearth on a TV: an aurora scene above a row of app tiles labelled Demo"></a>
+
+### [Hearth](https://github.com/jameskbb/hearth)
+
+A quiet, colorful home screen for Fire TV and Android TV, with animated scenes and remote-first navigation. Your apps in your order, and no ads, recommendations, accounts or analytics.
+
+**[Source](https://github.com/jameskbb/hearth)**&emsp;<sub>`Kotlin` `Android TV` `Fire TV`</sub>
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://jameskbb.github.io/email-signature/"><img src="assets/email-signature.jpg" width="100%" alt="Email Signature title card: the line 'Your image, your details. A clean sign-off, ready to copy.' beside a sample signature for a fictional product designer"></a>
+
+### [Email Signature](https://github.com/jameskbb/email-signature)
+
+Build an email signature with hosted images, contact links and a live preview, then export the HTML. No build step.
+
+**[Live demo](https://jameskbb.github.io/email-signature/)**&emsp;[Source](https://github.com/jameskbb/email-signature)&emsp;<sub>`JavaScript` `no build step`</sub>
 
 </td>
 </tr>
