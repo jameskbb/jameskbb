@@ -34,19 +34,19 @@ Data and analytics by day. The rest of the time I build data tools, AI experimen
 
 The résumé lives on **[LinkedIn](https://www.linkedin.com/in/jameskrape)**.
 
-**Jump to:** [AnalystOS](#user-content-analystos) · [FlightOps Intelligence](#user-content-flightops-intelligence) · [Workshop Injury Intelligence](#user-content-workshop-injury-intelligence) · [Fly Golf](#user-content-fly-golf) · [Blink Light](#user-content-blink-light) · [My homelab](#user-content-my-homelab) · [Casebook](#user-content-casebook) · [Tierboard](#user-content-tierboard) · [Lumber Cut Planner](#user-content-lumber-cut-planner) · [Hearth](#user-content-hearth) · [AgentTape](#user-content-agenttape)
+**Jump to:** [Casebook](#user-content-casebook) · [FlightOps Intelligence](#user-content-flightops-intelligence) · [Workshop Injury Intelligence](#user-content-workshop-injury-intelligence) · [Fly Golf](#user-content-fly-golf) · [Blink Light](#user-content-blink-light) · [My homelab](#user-content-my-homelab) · [AnalystOS](#user-content-analystos) · [Tierboard](#user-content-tierboard) · [Lumber Cut Planner](#user-content-lumber-cut-planner) · [Hearth](#user-content-hearth) · [AgentTape](#user-content-agenttape)
 
 ## Data and analytics
 
-### [AnalystOS](https://github.com/jameskbb/analystos)
+### [Casebook](https://github.com/jameskbb/casebook)
 
-<a href="https://github.com/jameskbb/analystos"><img src="assets/analystos.jpg" width="100%" alt="AnalystOS with generated demo data: the question 'We made our sales number last quarter, but we missed our target for net profit. What happened?' above a waterfall from a $3.79M operating profit plan to $1.93M actual. Only the larger bars carry a driver label. A line below reads residual $0.00."></a>
+<a href="https://github.com/jameskbb/casebook"><img src="assets/casebook.jpg" width="100%" alt="Casebook title card: the line 'Evidence your agents can't forget. Claims only you can verify.' beside a fictional case about a Northeast margin decline"></a>
 
-**Ask why a number moved; get an answer where every figure links back to its SQL.**
+**Evidence your agents can't forget, claims only you can verify.**
 
-A dashboard shows what happened. Working out why is still an analyst's afternoon. AnalystOS makes that method executable: ask "we made our sales number, but missed our target for net profit; what happened?" and it proposes a plan you can edit, runs it as SQL, and returns a tree of findings. In the made-up demo company, a $1.86M profit miss is attributed to supplier costs, contractor discounts, freight and overtime. It runs locally, and it needs no API key.
+AI findings become a case you can explain and fact-check later, across sessions and AI clients, with everything kept on your own computer.
 
-**[Source](https://github.com/jameskbb/analystos)**&emsp;<sub>`analytics` `semantic layer` `SQL` `Python` `TypeScript`</sub>
+**[Download](https://github.com/jameskbb/casebook/releases)**&emsp;[Source](https://github.com/jameskbb/casebook)&emsp;<sub>`Go` `MCP` `AI agents` `desktop app`</sub>
 
 <table>
 <tr>
@@ -116,15 +116,15 @@ A retired desktop running Proxmox: everyday apps, game servers for friends, and 
 
 ## Everyday tools
 
-### [Casebook](https://github.com/jameskbb/casebook)
+### [AnalystOS](https://github.com/jameskbb/analystos)
 
-<a href="https://github.com/jameskbb/casebook"><img src="assets/casebook.jpg" width="100%" alt="Casebook title card: the line 'Evidence your agents can't forget. Claims only you can verify.' beside a fictional case about a Northeast margin decline"></a>
+<a href="https://github.com/jameskbb/analystos"><img src="assets/analystos.jpg" width="100%" alt="AnalystOS with generated demo data: the question 'We made our sales number last quarter, but we missed our target for net profit. What happened?' above a waterfall from a $3.79M operating profit plan to $1.93M actual. Only the larger bars carry a driver label. A line below reads residual $0.00."></a>
 
-**Evidence your agents can't forget, claims only you can verify.**
+**Ask why a number moved; get an answer where every figure links back to its SQL.**
 
-AI findings become a case you can explain and fact-check later, across sessions and AI clients, with everything kept on your own computer.
+A dashboard shows what happened. Working out why is still an analyst's afternoon. AnalystOS makes that method executable: ask "we made our sales number, but missed our target for net profit; what happened?" and it proposes a plan you can edit, runs it as SQL, and returns a tree of findings. In the made-up demo company, a $1.86M profit miss is attributed to supplier costs, contractor discounts, freight and overtime. It runs locally, and it needs no API key.
 
-**[Download](https://github.com/jameskbb/casebook/releases)**&emsp;[Source](https://github.com/jameskbb/casebook)&emsp;<sub>`Go` `MCP` `AI agents` `desktop app`</sub>
+**[Source](https://github.com/jameskbb/analystos)**&emsp;<sub>`analytics` `semantic layer` `SQL` `Python` `TypeScript`</sub>
 
 <table>
 <tr>
