@@ -34,7 +34,7 @@ Data and analytics by day. The rest of the time I build data tools, AI experimen
 
 The résumé lives on **[LinkedIn](https://www.linkedin.com/in/jameskrape)**.
 
-**Jump to:** [AnalystOS](#user-content-analystos) · [FlightOps Intelligence](#user-content-flightops-intelligence) · [Workshop Injury Intelligence](#user-content-workshop-injury-intelligence) · [Fly Golf](#user-content-fly-golf) · [Blink Light](#user-content-blink-light) · [My homelab](#user-content-my-homelab) · [Tierboard](#user-content-tierboard) · [Lumber Cut Planner](#user-content-lumber-cut-planner) · [Hearth](#user-content-hearth) · [Casebook](#user-content-casebook)
+**Jump to:** [AnalystOS](#user-content-analystos) · [FlightOps Intelligence](#user-content-flightops-intelligence) · [Workshop Injury Intelligence](#user-content-workshop-injury-intelligence) · [Fly Golf](#user-content-fly-golf) · [Blink Light](#user-content-blink-light) · [My homelab](#user-content-my-homelab) · [Casebook](#user-content-casebook) · [Tierboard](#user-content-tierboard) · [Lumber Cut Planner](#user-content-lumber-cut-planner) · [Hearth](#user-content-hearth) · [AgentTape](#user-content-agenttape)
 
 ## Data and analytics
 
@@ -116,6 +116,16 @@ A retired desktop running Proxmox: everyday apps, game servers for friends, and 
 
 ## Everyday tools
 
+### [Casebook](https://github.com/jameskbb/casebook)
+
+<a href="https://github.com/jameskbb/casebook"><img src="assets/casebook.jpg" width="100%" alt="Casebook title card: the line 'Evidence your agents can't forget. Claims only you can verify.' beside a fictional case about a Northeast margin decline"></a>
+
+**Evidence your agents can't forget, claims only you can verify.**
+
+AI findings become a case you can explain and fact-check later, across sessions and AI clients, with everything kept on your own computer.
+
+**[Download](https://github.com/jameskbb/casebook/releases)**&emsp;[Source](https://github.com/jameskbb/casebook)&emsp;<sub>`Go` `MCP` `AI agents` `desktop app`</sub>
+
 <table>
 <tr>
 <td width="50%" valign="top">
@@ -144,7 +154,7 @@ Tell it the plywood and boards you have and the parts you need. It lays out cuts
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/jameskbb/hearth"><img src="assets/hearth.jpg" width="100%" alt="Hearth on a TV: a clock over an aurora scene, above a row of app tiles labelled Demo"></a>
+<a href="https://github.com/jameskbb/hearth"><img src="assets/hearth.jpg" width="100%" alt="Hearth title card: the line 'A quiet, colorful home screen for Fire TV and Android TV, built for the remote' beside a TV home screen with a clock over a dusk landscape, above a row of app tiles labelled Demo"></a>
 
 ### [Hearth](https://github.com/jameskbb/hearth)
 
@@ -155,13 +165,13 @@ A quiet, colorful home screen for Fire TV and Android TV, with animated scenes a
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/jameskbb/casebook"><img src="assets/casebook.jpg" width="100%" alt="Casebook title card: the line 'Evidence your agents can't forget. Claims only you can verify.' beside a fictional case about a Northeast margin decline"></a>
+<a href="https://github.com/jameskbb/agent-tape"><img src="assets/agent-tape.jpg" width="100%" alt="AgentTape title card: the app icon and wordmark over the lines 'The flight recorder for AI coding agents' and 'Every claim, file, and approval on the record', a REC indicator for one run, and a timeline of six recorded events from the prompt to passing checks"></a>
 
-### [Casebook](https://github.com/jameskbb/casebook)
+### [AgentTape](https://github.com/jameskbb/agent-tape)
 
-Evidence your agents can't forget, claims only you can verify. AI findings become a case you can explain and fact-check later, across sessions and AI clients, with everything kept on your own computer.
+Did your coding agent really read the lines it cites? Agents record findings with their evidence, and AgentTape checks each citation against its own recording of the run. A matching quote shows the lines were in what the agent read, not that its conclusion is right. It runs locally and checks Claude Code findings today. Version 0.1.0, unreleased.
 
-**[Download](https://github.com/jameskbb/casebook/releases)**&emsp;[Source](https://github.com/jameskbb/casebook)&emsp;<sub>`Go` `MCP` `AI agents` `desktop app`</sub>
+**[Source](https://github.com/jameskbb/agent-tape)**&emsp;<sub>`Python` `AI agents` `MCP` `Claude Code`</sub>
 
 </td>
 </tr>
