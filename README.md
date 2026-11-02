@@ -1,13 +1,22 @@
 <!--
   Profile README for github.com/jameskbb. Hand-curated on purpose.
 
-  Projects are grouped by theme, one "##" heading per group. To feature a
-  project: copy one of the blocks into the group it belongs to. The most
-  substantial projects get a full-width block that opens with a one-line
-  hook in bold; smaller ones sit in a two-column table. Images live in
-  assets/ (JPEG, ~1200px wide). Add the project to the "Jump to" row under
-  the intro as well; its anchor is the heading text, lowercased, with
-  spaces turned into hyphens.
+  The page is one argument: a number should be able to show its work. The
+  opening states it, and every project pays it off briefly.
+
+  "Four questions" holds the flagships. Each one has a "###" heading, a
+  full-width image in assets/ (~1200px wide), the question in bold, a few
+  sentences, a blockquote opening "Where the answer stops:" with the honest
+  limit, then the link row. To feature a flagship, copy one of those blocks and
+  add it to the links in the opening paragraph. Those links must use the form
+  #user-content-<anchor>, because a plain #anchor does not scroll on the profile
+  page. The anchor is the heading text, lowercased, with spaces turned into
+  hyphens.
+
+  "Smaller questions" is a list with no images: a bold name, one or two
+  sentences, then the same link row after a <br>. Keep the page to one column:
+  two-column tables squeeze to illegible images on a phone. Every image needs
+  alt text describing what it actually shows.
 
   Two regions are generated and must not be hand-edited: anything between
   BEGIN:repos / END:repos and BEGIN:writing / END:writing is overwritten by
@@ -25,104 +34,71 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
-  <img src="assets/banner-light.png" width="100%" alt="James Krape. Builder. Leader. Writer.">
+  <img src="assets/banner-light.png" width="100%" alt="James Krape. Analyst. Builder.">
 </picture>
 
-Data and analytics by day. The rest of the time I build data tools, AI experiments, things for the woodshop, and the occasional simulation that exists only because I wanted to know the answer.
+**A number should be able to show its work:** where it came from, whether the parts add up, and what it cannot tell you.
 
-The writing lives at **[jameskrape.com](https://jameskrape.com)**, including the longer stories behind these projects. The résumé lives on **[LinkedIn](https://www.linkedin.com/in/jameskrape)**.
+That is my job in business intelligence. It is also, apparently, what I do for fun. The same standard runs through [a made-up company's missed profit target](#user-content-analystos), [23.0 million flights](#user-content-flightops-intelligence), [twenty years of workshop injuries](#user-content-workshop-injury-intelligence) and [a fruit fly playing golf](#user-content-fly-golf). The résumé is on **[LinkedIn](https://www.linkedin.com/in/jameskrape)**.
 
-**Jump to:** [AnalystOS](#analystos) · [FlightOps Intelligence](#flightops-intelligence) · [Fly Golf](#fly-golf) · [Blink Light](#blink-light) · [My homelab](#my-homelab) · [Tierboard](#tierboard) · [Lumber Cut Planner](#lumber-cut-planner)
-
-## Data and analytics
+## Four questions
 
 ### [AnalystOS](https://github.com/jameskbb/analystos)
 
-<a href="https://github.com/jameskbb/analystos"><img src="assets/analystos.jpg" width="100%" alt="AnalystOS: the CEO question 'We made our sales number last quarter, but we missed our target for net profit. What happened?' answered with a plan-to-actual waterfall for Q2 2026, from a $3.79M operating profit plan to $1.93M actual, each bar labelled with its measured cause and reconciled to a $0.00 residual"></a>
+**We made our sales number. Why did we miss profit?**
 
-**Ask why a number moved; get an answer where every figure links back to its SQL.**
+<a href="https://github.com/jameskbb/analystos"><img src="assets/analystos.jpg" width="100%" alt="AnalystOS with generated demo data: the question 'We made our sales number last quarter, but we missed our target for net profit. What happened?' above a waterfall from a $3.79M operating profit plan to $1.93M actual. Only the larger bars carry a driver label. A line below reads residual $0.00."></a>
 
-A dashboard shows what happened. Working out why is still an analyst's afternoon: pick the right metric definition, find a fair baseline, write the queries, check that the parts add up. AnalystOS makes that method executable. Ask "we made our sales number last quarter, but we missed our target for net profit; what happened?" and it proposes a plan you can edit, runs it as real SQL, and returns a tree of findings. In the bundled demo, revenue lands on plan while operating profit misses by $1.86M (49%), and every dollar of the gap traces to a measured cause: supplier cost inflation, contractor discounting, freight and overtime, reconciled to a $0.00 residual. The arithmetic never passes through a language model, and the whole thing runs locally with no API key.
+AnalystOS proposes a plan you can edit, runs it as SQL, and links every figure back to its query. In the generated demo, revenue lands on plan while operating profit misses by $1.86M (49%). The gap is attributed to measured drivers, including supplier costs, contractor discounts, freight and overtime, with volume and mix as the computed remainder, so the $0.00 residual shows that the sum closes and nothing more. The engine computes every reported figure and runs fully with no model configured. If one is added, it can suggest and reword inside fixed limits, and wording with unmatched numbers is rejected.
+
+> **Where the answer stops:** it can say where the gap sits, not why anyone did anything. That is attribution, not proof of cause. A wrong metric definition gives a reproducibly wrong answer, with full lineage.
 
 **[Source](https://github.com/jameskbb/analystos)**&emsp;<sub>`analytics` `semantic layer` `SQL` `Python` `TypeScript`</sub>
 
 ### [FlightOps Intelligence](https://github.com/jameskbb/airline-ops)
 
-<a href="https://github.com/jameskbb/airline-ops"><img src="assets/airline-ops.jpg" width="100%" alt="FlightOps Intelligence: an executive overview of U.S. network on-time performance, with KPI tiles, a network health trend and a generated operations brief"></a>
+**Was that a bad month, or just a bad comparison?**
 
-**Three years of U.S. airline delays, from the whole network down to a single route.**
+<a href="https://github.com/jameskbb/airline-ops"><img src="assets/airline-ops.jpg" width="100%" alt="FlightOps Intelligence Executive Overview for August 2026: six KPI tiles including 73.3% on-time arrival, each with month-over-month and year-over-year changes, monthly trend lines for on-time arrival and cancellation rate, and an operations brief generated by deterministic rules."></a>
 
-Public airline-performance data is rich and almost unusable: roughly 650,000 rows and 120 columns a month, with every interesting question sitting several transformations away from the source. FlightOps turns 36 months of DOT on-time reporting (22.9 million flights) into something you can actually interrogate, by route, carrier or delay cause. Each metric is defined once and compared like with like, so a genuinely bad month and a changed traffic mix stop looking the same. The processed data ships with the repo, so it runs the moment you clone it.
+FlightOps turns 36 months of U.S. on-time reporting, 23.0 million flights, into something you can follow from the whole network down to a single route. Each metric is defined once, airports are measured against their own hub tier, and routes against their own distance band. In the picture, August 2026 on-time arrival is up 1.5 points on the month and down 4.5 on the year. Both are true, which is why the comparison gets as much care as the number.
 
-**[Source](https://github.com/jameskbb/airline-ops)**&emsp;<sub>`Streamlit` `DuckDB` `Parquet` `analytics` `Python`</sub>
+> **Where the answer stops:** delay causes are reported by the carriers themselves and are not proven. Reporting usually lags two to three months, so this is history. It will not tell you when your flight lands.
 
-## Experiments
+**[Live demo](https://airline-ops.streamlit.app/)**&emsp;[Source](https://github.com/jameskbb/airline-ops)&emsp;<sub>`Streamlit` `DuckDB` `Parquet` `analytics` `Python`</sub>
+
+### [Workshop Injury Intelligence](https://github.com/jameskbb/shop-injury-intelligence)
+
+**What sends people from the workshop to the ER?**
+
+<a href="https://github.com/jameskbb/shop-injury-intelligence"><img src="assets/shop-injury-intelligence.jpg" width="100%" alt="Workshop Injury Intelligence title card: 'What sends workshop users to the ER?' beside ranked bars of estimated U.S. ER-treated injuries, adults, annual average 2006 to 2025: bench or table saw 33,000, grinder 19,700, saw unspecified 14,300, circular saw 11,300, drill 10,300. A label reads no exposure denominator."></a>
+
+Twenty years of U.S. emergency-department surveillance: 63,425 sampled cases, survey-weighted into national estimates by tool, body region and mechanism, with single-year figures for four sample years checked against the CPSC's Query Builder. Bench and table saws lead the count.
+
+> **Where the answer stops:** these are estimated counts, not rates. NEISS does not record how many people own a table saw or how long they run it, so which tool hurts people at the highest rate cannot honestly be answered here. A test fails if generated insights use words like "risk" or "safer". It is not a workplace safety dataset either.
+
+**[Live demo](https://shop-injury-intelligence.streamlit.app/)**&emsp;[Source](https://github.com/jameskbb/shop-injury-intelligence)&emsp;<sub>`survey statistics` `Streamlit` `DuckDB` `Python`</sub>
 
 ### [Fly Golf](https://github.com/jameskbb/fly-golf)
 
-<a href="https://jameskbb.github.io/fly-golf/"><img src="assets/fly-golf.gif" width="100%" alt="Fly Golf gameplay: the simulated fly picks a club, swings, and sends the ball over a pond onto the green"></a>
+**Can a fruit fly break 100?**
 
-**What happens when you hand a fruit fly's brain a golf bag.**
+<a href="https://jameskbb.github.io/fly-golf/"><img src="assets/fly-golf.webp" width="100%" alt="Fly Golf gameplay: a cartoon fly with a golf bag swings on a low-poly tee, and the camera follows the ball over a pond to a striped green with a yellow flag."></a>
 
-Fly Golf takes the reconstructed wiring of a real fruit fly's brain (166,700 neurons, 25.6 million connections), simulates it spike by spike, and puts it on a 3D golf course. The fly picks a club from a full bag, lines up the shot and swings, with each decision read out of its neural activity. It hasn't broken 100 yet.
+Sometimes: 13 of 46 rounds, best 88. The golfer is a simulation running on the reconstructed wiring of a male fly's brain and nerve cord, 166,700 neurons and 25.6 million connections. Club, aim and power are read from its descending neurons by a readout trained offline.
 
-**[Live demo](https://jameskbb.github.io/fly-golf/)**&emsp;[Source](https://github.com/jameskbb/fly-golf)&emsp;<sub>`connectome` `spiking neural sim` `Three.js` `Python`</sub>
+> **Where the answer stops:** the sensory and motor mappings are engineered, the wiring never learns, and on held-out front-nine practice shots a shuffled brain trains a better readout than the real one. It plays golf. Nothing here says the wiring is why.
 
-<table>
-<tr>
-<td width="50%" valign="top">
+**[Recorded demo](https://jameskbb.github.io/fly-golf/)**&emsp;[Source](https://github.com/jameskbb/fly-golf)&emsp;<sub>`connectome` `spiking neural sim` `Three.js` `Python`</sub>
 
-<a href="https://github.com/jameskbb/blink-light"><img src="assets/blink-light.jpg" width="100%" alt="Blink Light: a blink(1) USB light glowing from a laptop port"></a>
+## Smaller questions
 
-### [Blink Light](https://github.com/jameskbb/blink-light)
-
-A USB light that knows what my day is doing. It glows red while I'm in a meeting, flashes gold two minutes before standup, breathes blue when an AI coding agent finishes, and thumps orange when a CI run fails.
-
-**[Source](https://github.com/jameskbb/blink-light)**&emsp;<sub>`Python` `hardware` `AI agents`</sub>
-
-</td>
-<td width="50%" valign="top">
-
-<a href="https://github.com/jameskbb/homelab-public"><img src="assets/homelab.jpg" width="100%" alt="My Homelab: one retired desktop running apps, games and experiments"></a>
-
-### [My homelab](https://github.com/jameskbb/homelab-public)
-
-A retired office desktop running Proxmox with three jobs: everyday apps, game servers for friends, and a sandbox for experiments. Written as a guide for someone who has never run a server, backups and restores included.
-
-**[Source](https://github.com/jameskbb/homelab-public)**&emsp;<sub>`Proxmox` `self-hosting` `guide`</sub>
-
-</td>
-</tr>
-</table>
-
-## Everyday tools
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-<a href="https://jameskbb.github.io/tierboard/"><img src="assets/tierboard.jpg" width="100%" alt="Tierboard: a pizza tier list arranged across S through F tiers"></a>
-
-### [Tierboard](https://github.com/jameskbb/tierboard)
-
-Someone at lunch says "let's rank every pizza place in town." Paste a list, drag it into tiers, share a link: fast enough to finish before the conversation moves on. Voting, presentation mode and PNG export stay a keystroke away. No login, no backend.
-
-**[Live demo](https://jameskbb.github.io/tierboard/)**&emsp;[Source](https://github.com/jameskbb/tierboard)&emsp;<sub>`TypeScript` `no backend`</sub>
-
-</td>
-<td width="50%" valign="top">
-
-<a href="https://jameskbb.github.io/lumber-cut-planner/"><img src="assets/lumber-cut-planner.jpg" width="100%" alt="Lumber Cut Planner: a sheet of birch plywood laid out as a numbered cut plan"></a>
-
-### [Lumber Cut Planner](https://github.com/jameskbb/lumber-cut-planner)
-
-Tell it the plywood and boards you have and the parts you need. It lays out cuts a table saw can actually make, edge to edge with the blade kerf taken out, numbers them in the order you'll make them, and points out the offcuts worth keeping. It runs offline in a phone browser.
-
-**[Live demo](https://jameskbb.github.io/lumber-cut-planner/)**&emsp;[Source](https://github.com/jameskbb/lumber-cut-planner)&emsp;<sub>`woodworking` `cut optimization` `offline web app`</sub>
-
-</td>
-</tr>
-</table>
+- **[Lumber Cut Planner](https://github.com/jameskbb/lumber-cut-planner).** Will these parts come out of this sheet? Plans cuts a table saw can actually make, with the blade kerf taken out, and keeps working offline once loaded.<br>**[Live demo](https://jameskbb.github.io/lumber-cut-planner/)**&emsp;[Source](https://github.com/jameskbb/lumber-cut-planner)&emsp;<sub>`woodworking` `cut optimization` `offline web app`</sub>
+- **[Tierboard](https://github.com/jameskbb/tierboard).** Which pizza place is best? Paste a list, drag it into tiers and share a link before lunch changes the subject. No login, no backend.<br>**[Live demo](https://jameskbb.github.io/tierboard/)**&emsp;[Source](https://github.com/jameskbb/tierboard)&emsp;<sub>`TypeScript` `no backend`</sub>
+- **[Hearth](https://github.com/jameskbb/hearth).** Can a TV just be calm? A home screen for Fire TV and Android TV with no ads, recommendations, accounts or analytics.<br>**[Source](https://github.com/jameskbb/hearth)**&emsp;<sub>`Kotlin` `Android TV` `Fire TV`</sub>
+- **[My homelab](https://github.com/jameskbb/homelab-public).** What can one retired desktop do? Apps, game servers for friends and experiments on Proxmox, written up for someone who has never run a server, restores included.<br>**[Source](https://github.com/jameskbb/homelab-public)**&emsp;<sub>`Proxmox` `self-hosting` `guide`</sub>
+- **[Blink Light](https://github.com/jameskbb/blink-light).** Am I in a meeting? A USB light glows red when I am, flashes gold before standup, and breathes blue when an AI coding agent finishes.<br>**[Source](https://github.com/jameskbb/blink-light)**&emsp;<sub>`Python` `hardware` `AI agents`</sub>
+- **[Zambodi Search](https://github.com/jameskbb/zambodi-search).** What if the search engine existed in exactly one browser? A parody Chrome extension: Google still does the searching, and Zambodi just takes the credit.<br>**[Source](https://github.com/jameskbb/zambodi-search)**&emsp;<sub>`Chrome extension` `parody` `JavaScript`</sub>
 
 <!-- BEGIN:repos -->
 ## Elsewhere on GitHub

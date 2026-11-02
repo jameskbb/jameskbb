@@ -25,7 +25,7 @@ const arg = (k, d) =>
   (process.argv.find((a) => a.startsWith(`--${k}=`)) || `=${d}`).split('=').slice(1).join('=');
 
 const TAGLINES = {
-  site:   'Builder. Leader. Writer.',
+  site:   'Analyst. Builder.',
   builds: 'Builds things to find out whether they work.',
   none:   '',
 };
@@ -42,8 +42,11 @@ const git = (cmd, fallback) => {
 const tagline  = arg('tagline', 'site');
 const outDir   = path.resolve(here, arg('out', '..'));
 const portrait = has('portrait');
-const revision = arg('revision', git('rev-list --count HEAD', '1'));
-const drawn    = arg('drawn', git('log -1 --format=%cs', new Date().toISOString().slice(0, 10)));
+// Bot commits are skipped: counting them would change the banner on every run,
+// and that commit would change the next one, so the weekly commits would never stop.
+const HUMAN = `--invert-grep --grep="^Redraw the banner"`;
+const revision = arg('revision', git(`rev-list --count ${HUMAN} HEAD`, '1'));
+const drawn    = arg('drawn', git(`log -1 ${HUMAN} --format=%cs`, new Date().toISOString().slice(0, 10)));
 
 if (!(tagline in TAGLINES)) throw new Error(`unknown tagline: ${tagline}`);
 

@@ -90,7 +90,7 @@
 
   .wordmark {
     font-size: 96px; font-weight: 800; letter-spacing: -.028em;
-    line-height: .96; margin-top: 10px; white-space: nowrap;
+    line-height: .96; margin-top: 10px; white-space: nowrap; width: fit-content;
   }
 
   .tagline {
@@ -112,7 +112,7 @@
   /* the live fields read as pencilled-in values, so they get the accent rule */
   table.titleblock tr.live td.v { font-family: 'Overpass Mono', monospace; font-size: 13.5px; }
 
-  /* Portrait, off by default -- see the comment at the top of this file.
+  /* Portrait, off by default; see the comment at the top of this file.
      The source cutout has ~2px of headroom, so the head must break ABOVE the
      card or the top border shears it off. .clip extends past the card's top
      edge and crops only the shoulders at the sides and the chest at the bottom. */
@@ -150,12 +150,12 @@
         <span class="label">not to scale</span>
       </div>
       <div class="wordmark">James Krape</div>
-      <div class="tagline" id="tagline">Builder. Leader. Writer.</div>
+      <div class="tagline" id="tagline">Analyst. Builder.</div>
     </div>
 
     <div class="right">
       <table class="titleblock">
-        <tr><td class="k">contents</td><td class="v">simulations, tools, AI experiments</td></tr>
+        <tr><td class="k">contents</td><td class="v">data tools, simulations, AI experiments</td></tr>
         <tr><td class="k">status</td><td class="v">always in progress</td></tr>
         <tr class="live"><td class="k">revision</td><td class="v" id="revision">-</td></tr>
         <tr class="live"><td class="k">drawn</td><td class="v" id="drawn">-</td></tr>

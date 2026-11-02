@@ -59,7 +59,10 @@ const gh = async (url) => {
 // ---- repos ---------------------------------------------------------------
 const buildRepos = async (readme) => {
   const ignore = readIgnore();
-  const above = readme.slice(0, readme.indexOf('<!-- BEGIN:repos -->'));
+  // comments are stripped first: a repo named in the top comment isn't featured
+  const above = readme
+    .slice(0, readme.indexOf('<!-- BEGIN:repos -->'))
+    .replace(/<!--[\s\S]*?-->/g, '');
   const featured = new Set(
     [...above.matchAll(/github\.com\/jameskbb\/([A-Za-z0-9_.-]+)/g)].map((m) => m[1].toLowerCase()),
   );
@@ -78,7 +81,8 @@ const buildRepos = async (readme) => {
     .map((r) => {
       const bits = [`**[${r.name}](${r.html_url})**`];
       if (r.description) bits.push(r.description.replace(/\s+/g, ' ').trim());
-      const tail = [r.language, `updated ${r.pushed_at.slice(0, 10)}`].filter(Boolean).join(' · ');
+      const updated = r.pushed_at ? `updated ${r.pushed_at.slice(0, 10)}` : '';
+      const tail = [r.language, updated].filter(Boolean).join(' · ');
       return `- ${bits.join(': ')}<br><sub>${tail}</sub>`;
     })
     .join('\n');
@@ -92,7 +96,7 @@ const buildWriting = async () => {
       const res = await fetch(SITE + p, { headers: { 'User-Agent': 'jameskbb-profile-readme' } });
       if (!res.ok) continue;
       const body = await res.text();
-      // the site is an SPA that answers every path with index.html, so require real feed markup
+      // a missing feed can still answer with an HTML page, so require real feed markup
       if (!/<(rss|feed)[\s>]/i.test(body)) continue;
 
       const items = [...body.matchAll(/<(?:item|entry)\b[\s\S]*?<\/(?:item|entry)>/gi)]
