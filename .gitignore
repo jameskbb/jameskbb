@@ -1,0 +1,16 @@
+# Local secrets
+.env*
+!.env.example
+
+# Local agent and planning state
+.claude/settings.local.json
+.claude/worktrees/
+.planning/
+
+# Node
+node_modules/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
