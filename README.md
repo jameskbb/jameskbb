@@ -180,7 +180,9 @@ Did your coding agent really read the lines it cites? Agents record findings wit
 <!-- BEGIN:repos -->
 ## Elsewhere on GitHub
 
-- **[email-signature](https://github.com/jameskbb/email-signature)**: Create email signatures with hosted images, contact links, live preview, and HTML export. No build step.<br><sub>JavaScript · updated 2026-11-02</sub>
+- **[claude-code-speedometer](https://github.com/jameskbb/claude-code-speedometer)**: Claude Code plugin: your usage windows and context as a gauge cluster beside the chat<br><sub>TypeScript · updated 2026-11-08</sub>
+- **[workshop-planner](https://github.com/jameskbb/workshop-planner)**: Plan your garage or workshop to the sixteenth of an inch in the browser: clearances, vehicle fit, layout comparison, 3D, printable plans and a move plan.<br><sub>TypeScript · updated 2026-11-06</sub>
+- **[email-signature](https://github.com/jameskbb/email-signature)**: Create email signatures with hosted images, contact links, live preview, and HTML export. No build step.<br><sub>JavaScript · updated 2026-11-06</sub>
 <!-- END:repos -->
 
 <!-- BEGIN:writing -->
